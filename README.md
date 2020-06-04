@@ -1,2 +1,2 @@
 # auditly
-Visualization tool for npm-audit.
+Visualization tool for npm audit.
