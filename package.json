@@ -1,0 +1,22 @@
+{
+  "name": "auditly",
+  "version": "1.0.0",
+  "description": "Visualization tool for npm audit.",
+  "main": "parser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scottpreston/auditly.git"
+  },
+  "author": "Scott preston, Rishi sheth, Caleb eno, Aaron scarberry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/scottpreston/auditly/issues"
+  },
+  "homepage": "https://github.com/scottpreston/auditly#readme",
+  "dependencies": {
+    "commander": "^2.18.0"
+  }
+}
