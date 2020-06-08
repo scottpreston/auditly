@@ -5,7 +5,7 @@ var fs = require('fs');
 var program = require('commander');
 var version = require('./package.json').version;
 var convert = require('./lib/convert.js')
-
+console.log("YESSSS");
 var chunks = [];
 
 program
