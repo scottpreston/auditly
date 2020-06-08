@@ -2,9 +2,9 @@
   "name": "auditly",
   "version": "1.0.0",
   "description": "Visualization tool for npm audit.",
-  "main": "index.js",
+  "main": "parser.js",
   "bin": {
-    "auditly": "./index.js"
+    "auditly": "./parser.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
