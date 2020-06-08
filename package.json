@@ -2,6 +2,7 @@
   "name": "auditly",
   "version": "1.0.0",
   "description": "Visualization tool for npm audit.",
+  "bin": "parse.js",
   "main": "parser.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
