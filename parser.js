@@ -13,10 +13,7 @@ var test = false;
 
 if (test == false) {
 
-program
-  .option('-o, --out <path>', 'output filename, defaults to output.json')
-
-var filename = program.out || 'output.json';
+var filename = 'output.json';
 
 stdin.setEncoding('utf8');
 
@@ -52,7 +49,7 @@ var inputJSON = temp.toString();
       return console.log(err);
     }
 
-    console.log("The file was saved as " + filename + "!");
+    console.log("The file is " + filename);
   });
 
 }
