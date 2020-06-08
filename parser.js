@@ -30,7 +30,7 @@ stdin.on('end', function () {
       return console.log(err);
     }
 
-    console.log("The file was saved as " + filename + "!");
+    console.log("The file was saved as " + filename);
   });
 });
 } else {
