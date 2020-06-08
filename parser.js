@@ -6,8 +6,9 @@ var program = require('commander');
 var version = require('./package.json').version;
 var convert = require('./lib/convert.js')
 
-var chunks = [];
+var intake = [];
 
+//Used for testing with file in directory//
 var test = false;
 
 if (test == false) {
@@ -20,11 +21,11 @@ var filename = program.out || 'output.json';
 stdin.setEncoding('utf8');
 
 stdin.on('data', function (chunk) {
-  chunks.push(chunk);
+  intake.push(chunk);
 });
 
 stdin.on('end', function () {
-  var inputJSON = chunks.join(''),
+  var inputJSON = intake.join(''),
       outputJSON = convert(inputJSON);
 
   fs.writeFile(filename, outputJSON, function(err) {
