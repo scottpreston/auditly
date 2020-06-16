@@ -2,16 +2,17 @@
 var fs = require('fs');
 
 //Used for testing with file in directory//
-var temp = fs.readFileSync('example.json');
-var inputJSON = temp.toString();
-newJSON = JSON.parse(inputJSON);
+const inputJSON = fs.readFileSync('example.json', { encoding: 'utf-8' });
+const newJSON = JSON.parse(inputJSON);
 var cve_array = [];
 var cwe_array = [];
 
 for (var id in newJSON.advisories) {
   var issue = newJSON.advisories[id];
-  if (issue.cves[0] != null) {
-    cve_array.push(issue.cves[0]);
+  var x = 0;
+  while (issue.cves[x] != null) {
+    cve_array.push(issue.cves[x]);
+    x++;
   }
 }
 console.log("\nCVEs:")
