@@ -1,11 +1,9 @@
-const fs = require('fs');
-const path = require("path");
 var assert = require('assert');
-var parse = require('../parser');
+var parser = require('../parser');
 
 describe('Parser', function() {
-
-    it('testing', function(){
+    parse
+    it('Place holder for testing until we add more functionality and functions', function(){
         assert(true);
     });
 });
