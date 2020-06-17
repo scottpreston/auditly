@@ -20,6 +20,5 @@
   },
   "homepage": "https://github.com/scottpreston/auditly#readme",
   "dependencies": {
-    "commander": "^2.18.0"
   }
 }
