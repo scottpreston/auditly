@@ -1,9 +1,7 @@
 #! /usr/bin/env node
 var fs = require('fs');
+const newJSON = require('./example.json');
 
-//Used for testing with file in directory//
-const inputJSON = fs.readFileSync('example.json', { encoding: 'utf-8' });
-const newJSON = JSON.parse(inputJSON);
 var cve_array = [];
 var cwe_array = [];
 
