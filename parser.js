@@ -17,4 +17,4 @@ for (let id in newJSON.advisories) {
     "patched_versions": issue.patched_versions
   })
 }
-console.log("vuln obj", vulnObjs);
+console.log("auditObjects", auditObjects);
