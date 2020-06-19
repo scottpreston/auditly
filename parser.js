@@ -1,55 +1,26 @@
 #! /usr/bin/env node
-
-var stdin = process.stdin;
 var fs = require('fs');
-var program = require('commander');
-var version = require('./package.json').version;
-var convert = require('./lib/convert.js')
+const newJSON = require('./example.json');
 
-var intake = [];
+var cve_array = [];
+var cwe_array = [];
 
-//Used for testing with file in directory//
-var test = false;
-
-if (test == false) {
-
-var filename = 'output.json';
-
-stdin.setEncoding('utf8');
-
-stdin.on('data', function (chunk) {
-  intake.push(chunk);
-});
-
-stdin.on('end', function () {
-  var inputJSON = intake.join(''),
-      outputJSON = convert(inputJSON);
-
-  fs.writeFile(filename, outputJSON, function(err) {
-    if (err) {
-      return console.log(err);
-    }
-
-    console.log("The file was saved as " + filename);
-  });
-});
-} else {
-
-  program
-  .option('-o, --out <path>', 'output filename, defaults to output.json')
-
-var filename = program.out || 'output.json';
-var temp = fs.readFileSync('example.json');
-var inputJSON = temp.toString();
-
-      outputJSON = convert(inputJSON);
-
-  fs.writeFile(filename, outputJSON, function(err) {
-    if (err) {
-      return console.log(err);
-    }
-
-    console.log("The file is " + filename);
-  });
-
+for (var id in newJSON.advisories) {
+  var issue = newJSON.advisories[id];
+  var x = 0;
+  while (issue.cves[x] != null) {
+    cve_array.push(issue.cves[x]);
+    x++;
+  }
 }
+console.log("\nCVEs:")
+console.log(cve_array);
+
+for (var id in newJSON.advisories) { 
+  var issue = newJSON.advisories[id];
+  if (issue.cwe != null) {
+    cwe_array.push(issue.cwe);
+  }
+}
+console.log("\nCWEs:")
+console.log(cwe_array);
