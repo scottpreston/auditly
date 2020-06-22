@@ -1,26 +1,20 @@
 #! /usr/bin/env node
-var fs = require('fs');
+
 const newJSON = require('./example.json');
 
-var cve_array = [];
-var cwe_array = [];
-
-for (var id in newJSON.advisories) {
-  var issue = newJSON.advisories[id];
-  var x = 0;
-  while (issue.cves[x] != null) {
-    cve_array.push(issue.cves[x]);
-    x++;
-  }
+let auditObjects = [];
+for (let id in newJSON.advisories) {
+  let issue = newJSON.advisories[id];
+  auditObjects.push({
+    "cves": issue.cves,
+    "cwe": issue.cwe,
+    "title": issue.title,
+    "severity": issue.severity,
+    "overview": issue.overview,
+    "recommendation": issue.recommendation,
+    "references": issue.references,
+    "vulnerable_versions": issue.vulnerable_versions,
+    "patched_versions": issue.patched_versions
+  })
 }
-console.log("\nCVEs:")
-console.log(cve_array);
-
-for (var id in newJSON.advisories) { 
-  var issue = newJSON.advisories[id];
-  if (issue.cwe != null) {
-    cwe_array.push(issue.cwe);
-  }
-}
-console.log("\nCWEs:")
-console.log(cwe_array);
+console.log("auditObjects", auditObjects);
