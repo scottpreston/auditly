@@ -2,7 +2,7 @@
   "name": "auditly",
   "version": "1.0.0",
   "description": "Visualization tool for npm audit.",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "bin": {
     "auditly": "./index.js"
   },
