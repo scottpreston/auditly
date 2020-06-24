@@ -16,4 +16,6 @@ exec("npm audit --json > ./scans/npmaudit.json", (error, stdout, stderr) => {
   }
 });
 
-parseAuditData();
+const auditOutput = parseAuditData();
+
+console.log(auditOutput); // NOTE: Please remove this when html output is integrated
