@@ -2,13 +2,12 @@
   "name": "auditly",
   "version": "1.0.0",
   "description": "Visualization tool for npm audit.",
-  "main": "parser.js",
+  "main": "./lib/index.js",
   "bin": {
-    "auditly": "./parser.js"
+    "auditly": "./bin/auditly"
   },
   "scripts": {
-    "test": "nyc mocha",
-    "auditly": "./parser.js"
+    "test": "nyc mocha"
   },
   "repository": {
     "type": "git",
