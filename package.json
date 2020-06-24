@@ -4,7 +4,7 @@
   "description": "Visualization tool for npm audit.",
   "main": "./lib/index.js",
   "bin": {
-    "auditly": "./index.js"
+    "auditly": "./bin/auditly"
   },
   "scripts": {
     "test": "nyc mocha"
