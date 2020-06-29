@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auditly</title>
+</head>
+<body style="background-color:black">
+    <center>
+        <H style="color:#ffec80; font-size:450%;font-family:Verdana;"><strong>Auditly CVE Report<strong></H1>
+        <div id = 'htmlOutput'></div>
+    </center>
+        {{#each errors}}
+        <p style="color:white; font-size:150%;font-family:Verdana"> CVE : {{cves}} </p>
+        <p style="color:white; font-size:150%;font-family:Verdana"> CWE : {{cwe}} </p>
+        <p style="color:white; font-size:150%;font-family:Verdana"> Title: {{title}} </p>
+        <p style="color:white; font-size:150%;font-family:Verdana"> Severity : {{severity}} </p>
+        <p style="color:white; font-size:150%;font-family:Verdana"> Overview : {{overview}} </p>
+        <p style="color:white; font-size:150%;font-family:Verdana"> Recommendation: {{recommendation}} </p>
+        <p style="color:white; font-size:150%;font-family:Verdana"> References : {{references}} </p>
+        <p style="color:white; font-size:150%;font-family:Verdana"> Vulnerable Versions: {{vulnerable_versions}} </p>
+        <p style="color:white; font-size:150%;font-family:Verdana"> Patched Versions: {{patched_versions}} </p>
+        <br></br>
+        {{/each}}
+</body>
+</html>
