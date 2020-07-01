@@ -3,7 +3,7 @@ Visualization tool for npm audit.
 
 ## Running the package
 ```
-npm run auditly
+npx auditly
 ```
 
 ## Running tests
