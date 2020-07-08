@@ -6,32 +6,7 @@
     <script src="//unpkg.com/force-graph"></script>
 </head>
 <body style="background-color:black">
-    <center>
-        <H style="color:#ffec80; font-size:450%;font-family:Verdana;"><strong>Auditly CVE Report<strong></H1>
-        <div id = 'htmlOutput'></div>
-    </center>
-        {{#each errors}}
-        {{#if cves}}
-        <p style="color:white; font-size:150%;font-family:Verdana"> CVE : {{cves}} </p>
-        {{else}}
-        <p style="color:white; font-size:150%;font-family:Verdana"> CVE : N/A </p>
-        {{/if}}
 
-        {{#if cwe}}
-        <p style="color:white; font-size:150%;font-family:Verdana"> CWE : {{cwe}} </p>
-        {{else}}
-        <p style="color:white; font-size:150%;font-family:Verdana"> CWE : N/A </p>
-        {{/if}}
-
-        <p style="color:white; font-size:150%;font-family:Verdana"> Title: {{title}} </p>
-        <p style="color:white; font-size:150%;font-family:Verdana"> Severity : {{severity}} </p>
-        <p style="color:white; font-size:150%;font-family:Verdana"> Overview : {{overview}} </p>
-        <p style="color:white; font-size:150%;font-family:Verdana"> Recommendation: {{recommendation}} </p>
-        <p style="color:white; font-size:150%;font-family:Verdana"> References : {{references}} </p>
-        <p style="color:white; font-size:150%;font-family:Verdana"> Vulnerable Versions: {{vulnerable_versions}} </p>
-        <p style="color:white; font-size:150%;font-family:Verdana"> Patched Versions: {{patched_versions}} </p>
-        <br></br>
-        {{/each}}
 
         <div id="graph"></div>
 
