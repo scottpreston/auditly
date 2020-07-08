@@ -2,6 +2,8 @@
 <html>
 <head>
     <title>Auditly</title>
+
+    <script src="//unpkg.com/force-graph"></script>
 </head>
 <body style="background-color:black">
     <center>
@@ -20,7 +22,7 @@
         {{else}}
         <p style="color:white; font-size:150%;font-family:Verdana"> CWE : N/A </p>
         {{/if}}
-        
+
         <p style="color:white; font-size:150%;font-family:Verdana"> Title: {{title}} </p>
         <p style="color:white; font-size:150%;font-family:Verdana"> Severity : {{severity}} </p>
         <p style="color:white; font-size:150%;font-family:Verdana"> Overview : {{overview}} </p>
@@ -30,5 +32,33 @@
         <p style="color:white; font-size:150%;font-family:Verdana"> Patched Versions: {{patched_versions}} </p>
         <br></br>
         {{/each}}
+
+        <div id="graph"></div>
+
+        <script>
+          fetch('../lib/miserables.json').then(res => res.json()).then(data => {
+            const Graph = ForceGraph()
+            (document.getElementById('graph'))
+              .graphData(data)
+              .nodeId('id')
+              .nodeAutoColorBy('group')
+              .nodeCanvasObject((node, ctx, globalScale) => {
+                const label = node.id;
+                const fontSize = 12/globalScale;
+                ctx.font = `${fontSize}px Sans-Serif`;
+                const textWidth = ctx.measureText(label).width;
+                const bckgDimensions = [textWidth, fontSize].map(n => n + fontSize * 0.2);
+      
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+                ctx.fillRect(node.x - bckgDimensions[0] / 2, node.y - bckgDimensions[1] / 2, ...bckgDimensions);
+      
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillStyle = node.color;
+                ctx.fillText(label, node.x, node.y);
+              });
+          });
+        </script>
+
 </body>
 </html>
