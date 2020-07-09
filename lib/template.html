@@ -2,33 +2,35 @@
 <html>
 <head>
     <title>Auditly</title>
-    
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body style="background-color:black">
     <center>
-        <H style="color:#ffec80; font-size:450%;font-family:Verdana;"><strong>Auditly CVE Report<strong></H1>
+        <H class="head"><strong>Auditly CVE Report<strong></H1>
         <div id = 'htmlOutput'></div>
     </center>
         {{#each errors}}
         {{#if cves}}
-        <p style="color:white; font-size:150%;font-family:Verdana"> CVE : {{cves}} </p>
+        <p> CVE : {{cves}} </p>
         {{else}}
-        <p style="color:white; font-size:150%;font-family:Verdana"> CVE : N/A </p>
+        <p> CVE : N/A </p>
         {{/if}}
 
         {{#if cwe}}
-        <p style="color:white; font-size:150%;font-family:Verdana"> CWE : {{cwe}} </p>
+        <p> CWE : {{cwe}} </p>
         {{else}}
-        <p style="color:white; font-size:150%;font-family:Verdana"> CWE : N/A </p>
+        <p> CWE : N/A </p>
         {{/if}}
 
-        <p style="color:white; font-size:150%;font-family:Verdana"> Title: {{title}} </p>
-        <p style="color:white; font-size:150%;font-family:Verdana"> Severity : {{severity}} </p>
-        <p style="color:white; font-size:150%;font-family:Verdana"> Overview : {{overview}} </p>
-        <p style="color:white; font-size:150%;font-family:Verdana"> Recommendation: {{recommendation}} </p>
-        <p style="color:white; font-size:150%;font-family:Verdana"> References : {{references}} </p>
-        <p style="color:white; font-size:150%;font-family:Verdana"> Vulnerable Versions: {{vulnerable_versions}} </p>
-        <p style="color:white; font-size:150%;font-family:Verdana"> Patched Versions: {{patched_versions}} </p>
+        <p> Title: {{title}} </p>
+        <p> Severity : {{severity}} </p>
+        <p> Overview : {{overview}} </p>
+        <p> Recommendation: {{recommendation}} </p>
+        <p> References : {{references}} </p>
+        <p> Vulnerable Versions: {{vulnerable_versions}} </p>
+        <p> Patched Versions: {{patched_versions}} </p>
         <br></br>
         {{/each}}
 </body>
