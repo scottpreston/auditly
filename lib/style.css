@@ -2,7 +2,7 @@ body {
     background-color: black;
 }
 
-.head {
+h1 {
     color:#ffec80;
     font-size:450%;
     font-family:Verdana;
@@ -12,4 +12,5 @@ p {
     color:white;
     font-size:150%;
     font-family:Verdana;
+    font-weight: bold;
 }
