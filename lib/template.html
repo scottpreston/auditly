@@ -2,22 +2,33 @@
 <html>
 <head>
     <title>Auditly</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+
 </head>
-<body style="background-color:black">
+<body>
     <center>
-        <H style="color:#ffec80; font-size:450%;font-family:Verdana;"><strong>Auditly CVE Report<strong></H1>
-        <div id = 'htmlOutput'></div>
+        <h1>Auditly CVE Report</h1>
     </center>
         {{#each errors}}
-        <p style="color:white; font-size:150%;font-family:Verdana"> CVE : {{cves}} </p>
-        <p style="color:white; font-size:150%;font-family:Verdana"> CWE : {{cwe}} </p>
-        <p style="color:white; font-size:150%;font-family:Verdana"> Title: {{title}} </p>
-        <p style="color:white; font-size:150%;font-family:Verdana"> Severity : {{severity}} </p>
-        <p style="color:white; font-size:150%;font-family:Verdana"> Overview : {{overview}} </p>
-        <p style="color:white; font-size:150%;font-family:Verdana"> Recommendation: {{recommendation}} </p>
-        <p style="color:white; font-size:150%;font-family:Verdana"> References : {{references}} </p>
-        <p style="color:white; font-size:150%;font-family:Verdana"> Vulnerable Versions: {{vulnerable_versions}} </p>
-        <p style="color:white; font-size:150%;font-family:Verdana"> Patched Versions: {{patched_versions}} </p>
+        {{#if cves}}
+        <p> CVE : {{cves}} </p>
+        {{else}}
+        <p> CVE : N/A </p>
+        {{/if}}
+
+        {{#if cwe}}
+        <p> CWE : {{cwe}} </p>
+        {{else}}
+        <p> CWE : N/A </p>
+        {{/if}}
+
+        <p> Title: {{title}} </p>
+        <p> Severity : {{severity}} </p>
+        <p> Overview : {{overview}} </p>
+        <p> Recommendation: {{recommendation}} </p>
+        <p> References : {{references}} </p>
+        <p> Vulnerable Versions: {{vulnerable_versions}} </p>
+        <p> Patched Versions: {{patched_versions}} </p>
         <br></br>
         {{/each}}
 </body>
