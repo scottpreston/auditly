@@ -22,7 +22,7 @@
   "dependencies": {
     "force-graph": "^1.32.2",
     "handlebars": "^4.7.6",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.19"
   },
   "devDependencies": {
     "mocha": "^8.0.1",
