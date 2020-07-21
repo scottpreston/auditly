@@ -91,3 +91,6 @@ p {
     height: 75vh;
     font-size: 200px; 
   }
+
+
+  form{ display: inline-block; }
