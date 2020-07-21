@@ -25,7 +25,10 @@
         <p> Severity : {{severity}} </p>
         <p> Overview : {{overview}} </p>
         <p> Recommendation: {{recommendation}} </p>
+        {{#if link}}
         <a href={{link}}>Recommendation</a>
+        {{else}}
+        {{/if}}
         <p> References : {{references}} </p>
         <p> Vulnerable Versions: {{vulnerable_versions}} </p>
         <p> Patched Versions: {{patched_versions}} </p>
