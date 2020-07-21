@@ -55,85 +55,39 @@ p {
   .first:hover {
     box-shadow: 0 0 40px 40px #ffec80 inset;
   }
-
-  @import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
-
-auditly{ 
-  display: flex;
-  width: 100vw;
-  height: 20vh;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  color: #ffec80;
-  font-size: 130px;
-  font-family: 'Fira Mono', monospace;
-  letter-spacing: -5px;
-}
-
-div{
-  animation: glitch 1s linear infinite;
-}
-
-@keyframes glitch{
-  2%,64%{
-    transform: translate(2px,0) skew(0deg);
+  .title {
+    position: relative;
+    color: #ffec80;
+    padding: 20px 50px;
   }
-  4%,60%{
-    transform: translate(-2px,0) skew(0deg);
+   
+  .title:before {
+    background: #ffec80;
+    color: black;
+    content: 'Auditly';
+    overflow: hidden;
+    position: absolute;  
+    top: 0;  
+    left: 0;
+    padding: 20px 50px;
+      -webkit-clip-path: polygon(0% 0% , 30% 0%, 30% 100%, 0% 100%);  
+    clip-path: polygon(0% 0% , 30% 0%, 30% 100%, 0% 100%);
+    animation: slide 4s 1s linear infinite; 
+  } 
+             
+  @keyframes slide {      
+    50% {     
+      -webkit-clip-path: polygon(70% 0%, 100% 0%, 100% 100%, 70% 100%); 
+    } 
+  }  
+  
+  /* Unnecessary code */ 
+  Auditly {
+    font-family: sans-serif;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    font-size: 200px; 
   }
-  62%{
-    transform: translate(0,0) skew(5deg); 
-  }
-}
-
-div:before,
-div:after{
-  content: attr(title);
-  position: absolute;
-  left: 0;
-}
-
-div:before{
-  animation: glitchTop 1s linear infinite;
-  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-}
-
-@keyframes glitchTop{
-  2%,64%{
-    transform: translate(2px,-2px);
-  }
-  4%,60%{
-    transform: translate(-2px,2px);
-  }
-  62%{
-    transform: translate(13px,-1px) skew(-13deg); 
-  }
-}
-
-div:after{
-  animation: glitchBotom 1.5s linear infinite;
-  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-}
-
-@keyframes glitchBotom{
-  2%,64%{
-    transform: translate(-2px,0);
-  }
-  4%,60%{
-    transform: translate(-2px,0);
-  }
-  62%{
-    transform: translate(-22px,5px) skew(21deg); 
-  }
-}
-
-line {display: block;
-  height: 3px;
-  border: 0;
-  border-top: 1px solid #ffec80;
-  margin: 1em 0;
-  padding: 0;
-}
