@@ -17,14 +17,18 @@
   </a>
 </p>
 
-> Visualization tool for npm audit.
+> Auditly is a visualization tool for npm audit.
 
 ### 🏠 [Homepage](https://github.com/scottpreston/auditly#readme)
+
+## Demo
+
+![Auditly gif demo](demo/demo.gif)
 
 ## Install
 
 ```sh
-npm install
+npm i auditly
 ```
 
 ## Usage
@@ -59,6 +63,3 @@ Give a ⭐️ if this project helped you!
 
 Copyright © 2020 [Scott preston, Rishi sheth, Caleb eno, Aaron scarberry](https://github.com/scottpreston).<br />
 This project is [ISC](https://github.com/scottpreston/auditly/blob/master/LICENSE) licensed.
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
