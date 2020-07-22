@@ -7,28 +7,34 @@
 </head>
 <body>
     <center>
-        <h1>Auditly CVE Report</h1>
+        <h1>Auditly</h1>
     </center>
         {{#each errors}}
+        <line> </line>
         {{#if cves}}
         <p> CVE : {{cves}} </p>
         {{else}}
         <p> CVE : N/A </p>
         {{/if}}
-
         {{#if cwe}}
         <p> CWE : {{cwe}} </p>
         {{else}}
         <p> CWE : N/A </p>
         {{/if}}
-
         <p> Title: {{title}} </p>
         <p> Severity : {{severity}} </p>
         <p> Overview : {{overview}} </p>
         <p> Recommendation: {{recommendation}} </p>
+        {{#if link}}
+        <form action={{link}}>
+            <button class="btn first">Reference</button>
+        </form> 
+        {{else}}
+        {{/if}}
         <p> References : {{references}} </p>
         <p> Vulnerable Versions: {{vulnerable_versions}} </p>
         <p> Patched Versions: {{patched_versions}} </p>
+        <line> </line>
         <br></br>
         {{/each}}
 </body>
