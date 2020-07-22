@@ -25,6 +25,7 @@
 
 ![Auditly gif demo](demo/Demo.gif)
 
+
 ## Install
 
 ```sh
