@@ -6,6 +6,11 @@
   "bin": {
     "auditly": "./bin/auditly"
   },
+  "files": [
+    "*.md",
+    "bin",
+    "lib"
+  ],
   "scripts": {
     "test": "nyc mocha"
   },
