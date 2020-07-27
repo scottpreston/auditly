@@ -13,7 +13,7 @@
     ],
     "scripts": {
         "test": "nyc mocha",
-        "postinstall": "cp ./node_modules/force-graph/dist/force-graph.min.js lib/force-graph.min.js"
+        "prepare": "cp ./node_modules/force-graph/dist/force-graph.min.js lib/force-graph.min.js"
     },
     "repository": {
         "type": "git",
