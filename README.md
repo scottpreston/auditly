@@ -35,6 +35,18 @@ npm i auditly
 
 ```sh
 npx auditly
+
+
+Options:
+
+# customize registry for npm audit
+--registry=https://some.other.registry
+
+# set output dir path, can be absolute or relative to pwd
+--output=./my-output-location
+
+# output help options
+--help
 ```
 
 ## Run tests

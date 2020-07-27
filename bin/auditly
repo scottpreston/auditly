@@ -1,5 +1,36 @@
 #!/usr/bin/env node
 
-(async function main() {
-  require("../lib/index")
-}());
+const path = require('path');
+const yargs = require('yargs');
+
+yargs
+    .command('*', 'Generate Auditly Report', () => {}, (argv) => {
+
+        // configure output dir path to either absolute path or relative to pwd
+        let outputDirPath;
+        if (path.isAbsolute(argv.output)) {
+            outputDirPath = argv.output;
+        } else {
+            outputDirPath = path.join(process.env.PWD, argv.output)
+        }
+
+        const options = {
+            registryUrl: argv.registry,
+            outputDirPath: outputDirPath
+        };
+        require('../lib/index').runAuditly(options);
+    })
+    .option('registry', {
+        alias: 'r',
+        type: 'string',
+        description: 'Configure the registry to run npm audit against',
+        default: 'https://registry.npmjs.com'
+    })
+    .option('output', {
+        alias: 'o',
+        type: 'string',
+        description: 'The output directory for the auditly report (Defaults to process root)',
+        default: process.env.PWD
+    })
+    .help()
+    .argv;
