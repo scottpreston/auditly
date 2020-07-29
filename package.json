@@ -1,32 +1,39 @@
 {
-  "name": "auditly",
-  "version": "1.0.0",
-  "description": "Visualization tool for npm audit.",
-  "main": "./lib/index.js",
-  "bin": {
-    "auditly": "./bin/auditly"
-  },
-  "scripts": {
-    "test": "nyc mocha"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/scottpreston/auditly.git"
-  },
-  "author": "Scott preston, Rishi sheth, Caleb eno, Aaron scarberry",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/scottpreston/auditly/issues"
-  },
-  "homepage": "https://github.com/scottpreston/auditly#readme",
-  "dependencies": {
-    "bootstrap": "^4.5.0",
-    "force-graph": "^1.32.2",
-    "handlebars": "^4.7.6",
-    "lodash": "^4.17.19"
-  },
-  "devDependencies": {
-    "mocha": "^8.0.1",
-    "nyc": "^15.1.0"
-  }
+    "name": "auditly",
+    "version": "1.0.0",
+    "description": "Visualization tool for npm audit.",
+    "main": "./lib/index.js",
+    "bin": {
+        "auditly": "./bin/auditly"
+    },
+    "files": [
+        "*.md",
+        "bin",
+        "lib"
+    ],
+    "scripts": {
+        "test": "nyc mocha",
+        "prepare": "cp ./node_modules/force-graph/dist/force-graph.min.js lib/force-graph.min.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/scottpreston/auditly.git"
+    },
+    "author": "Scott Preston, Rishi Sheth, Caleb Eno, Aaron Scarberry",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/scottpreston/auditly/issues"
+    },
+    "homepage": "https://github.com/scottpreston/auditly#readme",
+    "dependencies": {
+        "bootstrap": "^4.5.0",
+        "handlebars": "^4.7.6",
+        "lodash": "^4.17.19",
+        "yargs": "^15.4.1"
+    },
+    "devDependencies": {
+        "force-graph": "^1.32.2",
+        "mocha": "^8.0.1",
+        "nyc": "^15.1.0"
+    }
 }

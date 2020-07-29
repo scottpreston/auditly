@@ -107,3 +107,7 @@ dist
 
 #custom
 output
+auditly-output
+
+#os
+.DS_Store
