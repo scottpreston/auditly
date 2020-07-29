@@ -12,6 +12,6 @@
         "sequelize": "^3.27.0"
     },
     "devDependencies": {
-        "auditly": "github:scottpreston/auditly#master"
+        "auditly": "file:.."
     }
 }
