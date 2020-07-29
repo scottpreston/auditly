@@ -5,7 +5,21 @@
 
      <title>Auditly</title>
      <script src="./force-graph.min.js"></script>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
  </head>
+ <div class="card text-center">
+    <div class="card-header">
+      <ul class="nav nav-pills card-header-pills">
+      </ul>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{cve}}</h5>
+      <p class="card-text">Title: {{title}}</p>
+      <p class="card-text">Severity: {{severity}}</p>
+      <p class="card-text">Recomendation: {{recomendation}}</p>
+      <p class="card-text">Title: {{title}}</p>
+    </div>
+  </div>
 
  <body>
      <div id="graph"></div>
