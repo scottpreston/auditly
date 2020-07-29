@@ -8,12 +8,13 @@ The `package.json` found here should be used to add packages with known vulnerab
 
 ## Usage
 
-Install local auditly and vulnerable dependencies.
+### Install local auditly and vulnerable dependencies.
 ```sh
 npn install
 ```
+__NOTE:__ When using `auditly: file:..` in the `package.json` > `dependecies` section, npm creates a symlink to that directory.  As a result, any changes will be automatically picked up.
 
-Generate Auditly Files
+### Generate Auditly Files
 ```sh
 npx auditly
 ```
@@ -22,6 +23,4 @@ Files will be generated at `demo/auditly-output`.
 
 ## Development
 
-This demo project is intended for use during development.  When changes are made to the auditly code, `npm install` will need to be run in the demo again to update the demo's local code.
-
-Packages with known vulnerabilities can be added to the `dependencies` section of the `package.json`.  The version numbers should be exact matches and not prefixed with `~` or `^`.
+This demo project is intended for use during development.  Packages with known vulnerabilities can be added to the `dependencies` section of the `package.json`.  The version numbers should be exact matches and not prefixed with `~` or `^`.
