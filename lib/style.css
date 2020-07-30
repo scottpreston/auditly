@@ -102,3 +102,22 @@ p {
 
 
   form{ display: inline-block; }
+
+  body {
+    background-color: black;
+    display: flex;
+}
+
+.card-container {
+    float: right;
+}
+.card-text {
+    color: black;
+    font-size: small;
+    font-family: inherit;
+    font-weight: normal;
+}
+#graph {
+    background-color: #fff;
+    float: right;
+}
