@@ -3,23 +3,23 @@ body {
 }
 
 h1 {
-    color:#ffec80;
-    font-size:530%;
-    font-family:'Montserrat', sans-serif;
+    color: #ffec80;
+    font-size: 530%;
+    font-family: 'Montserrat', sans-serif;
 }
 
 p {
-    color:white;
-    font-size:150%;
-    font-family:'Montserrat', sans-serif;
+    color: white;
+    font-size: 150%;
+    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
 }
 
 .btn {
     box-sizing: border-box;
     -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     background-color: transparent;
     border: 2px solid #ffec80;
     border-radius: 0.6em;
@@ -30,8 +30,8 @@ p {
     display: -ms-flexbox;
     display: flex;
     -webkit-align-self: center;
-        -ms-flex-item-align: center;
-            align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1;
@@ -42,82 +42,97 @@ p {
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-  }
-  .btn:hover, .btn:focus {
+}
+
+.btn:hover,
+.btn:focus {
     color: #fff;
     outline: 0;
-  }
+}
 
-  .first {
+.first {
     -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
     transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-  }
-  .first:hover {
+}
+
+.first:hover {
     box-shadow: 0 0 40px 40px #ffec80 inset;
-  }
-  .title {
+}
+
+.title {
     position: relative;
     color: #ffec80;
     padding: 20px 50px;
-  }
-   
-  .title:before {
+}
+
+.title:before {
     background: #ffec80;
     color: black;
     content: 'Auditly';
     overflow: hidden;
-    position: absolute;  
-    top: 0;  
+    position: absolute;
+    top: 0;
     left: 0;
     padding: 20px 50px;
-      -webkit-clip-path: polygon(0% 0% , 30% 0%, 30% 100%, 0% 100%);  
-    clip-path: polygon(0% 0% , 30% 0%, 30% 100%, 0% 100%);
-    animation: slide 4s 1s linear infinite; 
-  } 
-             
-  @keyframes slide {      
-    50% {     
-      -webkit-clip-path: polygon(70% 0%, 100% 0%, 100% 100%, 70% 100%); 
-    } 
-  }  
-  
-  /* Unnecessary code */ 
-  Auditly {
+    -webkit-clip-path: polygon(0% 0%, 30% 0%, 30% 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 30% 0%, 30% 100%, 0% 100%);
+    animation: slide 4s 1s linear infinite;
+}
+
+@keyframes slide {
+    50% {
+        -webkit-clip-path: polygon(70% 0%, 100% 0%, 100% 100%, 70% 100%);
+    }
+}
+
+/* Unnecessary code */
+Auditly {
     font-family: sans-serif;
     font-weight: 700;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 75vh;
-    font-size: 200px; 
-  }
+    font-size: 200px;
+}
 
-  line {display: block;
+line {
+    display: block;
     height: 3px;
     border: 0;
     border-top: 1px solid #ffec80;
     margin: 1em 0;
     padding: 0;
-  } 
-
-
-  form{ display: inline-block; }
-
-  body {
-    background-color: black;
-    display: flex;
 }
+
+
+form {
+    display: inline-block;
+}
+
+.viz-content {}
 
 .card-container {
-    float: right;
+    background-color: white;
+    padding: 0;
 }
+
+.cwe-header {
+    padding: 20px;
+    color: #ffec80;
+    text-align: center;
+}
+
 .card-text {
     color: black;
     font-size: small;
     font-family: inherit;
     font-weight: normal;
 }
-#graph {
+
+.jumbotron {
     background-color: #fff;
-    float: right;
+    margin: 0 25%;
+    height: 800px;
+    width: 50%;
 }
