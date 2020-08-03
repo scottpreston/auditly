@@ -110,13 +110,17 @@ form {
     display: inline-block;
 }
 
-.viz-content {
-    display: flex;
-}
+.viz-content {}
 
 .card-container {
-    float: left;
     background-color: white;
+    padding: 0;
+}
+
+.cwe-header {
+    padding: 20px;
+    color: #ffec80;
+    text-align: center;
 }
 
 .card-text {
@@ -126,7 +130,9 @@ form {
     font-weight: normal;
 }
 
-#graph {
+.jumbotron {
     background-color: #fff;
-    float: right;
+    margin: 0 25%;
+    height: 800px;
+    width: 50%;
 }
