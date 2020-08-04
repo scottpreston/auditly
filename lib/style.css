@@ -1,5 +1,6 @@
 body {
     background-color: black;
+    padding: 40px;
 }
 
 h1 {
@@ -110,11 +111,20 @@ form {
     display: inline-block;
 }
 
-.viz-content {}
+.viz-content {
+    display: flex;
+}
 
-.card-container {
-    background-color: white;
+#card-container {
     padding: 0;
+    width: 50%;
+    margin-left: 20px;
+    height: 800px;
+    overflow: scroll;
+}
+
+.card {
+    margin: 5px 0;
 }
 
 .cwe-header {
@@ -132,7 +142,7 @@ form {
 
 .jumbotron {
     background-color: #fff;
-    margin: 0 25%;
+    margin-right: 20px;
     height: 800px;
     width: 50%;
 }
