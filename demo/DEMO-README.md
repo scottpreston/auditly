@@ -10,7 +10,7 @@ The `package.json` found here should be used to add packages with known vulnerab
 
 ### Install local auditly and vulnerable dependencies.
 ```sh
-npn install
+npm install
 ```
 __NOTE:__ When using `auditly: file:..` in the `package.json` > `dependecies` section, npm creates a symlink to that directory.  As a result, any changes will be automatically picked up.
 
