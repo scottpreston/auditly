@@ -20,7 +20,7 @@
         "url": "git+https://github.com/scottpreston/auditly.git"
     },
     "author": "Scott Preston, Rishi Sheth, Caleb Eno, Aaron Scarberry",
-    "license": "ISC",
+    "license": "MIT",
     "bugs": {
         "url": "https://github.com/scottpreston/auditly/issues"
     },

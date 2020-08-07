@@ -2,6 +2,8 @@
 
 This demo project is used to show how auditly can create a graph of vulnerabilities in your dependencies.
 
+#### DO THIS FIRST: Rename all .example files to .json.
+
 ## Demo `package.json`
 
 The `package.json` found here should be used to add packages with known vulnerabilities.  Most of these will be older packages that have long since been patched.  These packages WILL NOT end up in the published auditly NPM package.  Indeed the entire demo folder will not be included with the install.
