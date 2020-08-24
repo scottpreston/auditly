@@ -1,6 +1,6 @@
 {
     "name": "auditly",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Visualization tool for npm audit.",
     "main": "./lib/index.js",
     "bin": {

@@ -12,9 +12,6 @@
   <a href="https://github.com/scottpreston/auditly/blob/master/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/github/license/scottpreston/auditly" />
   </a>
-  <a href="https://twitter.com/AuditlyJs" target="_blank">
-    <img alt="Twitter: AuditlyJs" src="https://img.shields.io/twitter/follow/AuditlyJs.svg?style=social" />
-  </a>
 </p>
 
 > Auditly is a visualization tool for npm audit.
@@ -57,9 +54,7 @@ npm test
 
 ## Resources
 
-* Website: http://www.scottpreston.com
-* Twitter: [@AuditlyJs](https://twitter.com/AuditlyJs)
-* Github: [@scottpreston](https://github.com/scottpreston)
+* Github: [@scottpreston](https://github.com/scottpreston/auditly)
 
 ## Contributors
 
