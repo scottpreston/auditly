@@ -1,88 +1,114 @@
-const assert = require('assert');
-const parser = require('../lib/parser');
+const { parseAuditData } = require('../lib/parser');
 
-describe('Parser', function () {
-    describe('parseAuditData', function () {
-        it('should parse valid audit data correctly', function () {
-            const mockData = {
-                advisories: {
-                    '1': {
-                        cves: ['CVE-2023-1234'],
-                        cwe: 'CWE-123',
+describe('parseAuditData', () => {
+    test('should handle empty data', () => {
+        expect(() => parseAuditData(null)).toThrow('Invalid audit data format');
+        expect(() => parseAuditData(undefined)).toThrow('Invalid audit data format');
+    });
+
+    test('should handle empty vulnerabilities', () => {
+        const data = {
+            vulnerabilities: {}
+        };
+        expect(parseAuditData(data)).toEqual([]);
+    });
+
+    test('should parse single vulnerability', () => {
+        const data = {
+            vulnerabilities: {
+                'test-package': {
+                    name: 'test-package',
+                    severity: 'high',
+                    via: [{
+                        source: 123,
+                        name: 'test-package',
                         title: 'Test Vulnerability',
-                        severity: 'high',
-                        overview: 'Test overview',
-                        recommendation: 'Test recommendation',
-                        references: 'https://test.com',
-                        module_name: 'test-module',
-                        vulnerable_versions: '1.0.0',
-                        patched_versions: '1.0.1'
+                        cwe: ['CWE-123'],
+                        url: 'https://example.com/vuln'
+                    }],
+                    range: '<1.0.0',
+                    fixAvailable: {
+                        version: '1.0.0'
                     }
                 }
-            };
+            }
+        };
 
-            const result = parser.parseAuditData(mockData);
-            assert.strictEqual(result.length, 1);
-            assert.deepStrictEqual(result[0], {
-                cves: ['CVE-2023-1234'],
-                cwe: 'CWE-123',
-                title: 'Test Vulnerability',
-                severity: 'high',
-                overview: 'Test overview',
-                recommendation: 'Test recommendation',
-                references: 'https://test.com',
-                module_name: 'test-module',
-                vulnerable_versions: '1.0.0',
-                patched_versions: '1.0.1'
-            });
+        const result = parseAuditData(data);
+        expect(result).toHaveLength(1);
+        expect(result[0]).toEqual({
+            cves: ['CWE-123'],
+            cwe: 'CWE-123',
+            title: 'Test Vulnerability',
+            severity: 'high',
+            overview: 'https://example.com/vuln',
+            recommendation: 'Fix available: Update to 1.0.0',
+            references: 'https://example.com/vuln',
+            module_name: 'test-package',
+            vulnerable_versions: '<1.0.0',
+            patched_versions: '1.0.0'
         });
+    });
 
-        it('should handle missing fields gracefully', function () {
-            const mockData = {
-                advisories: {
-                    '1': {
-                        cves: [],
-                        cwe: '',
-                        title: '',
-                        severity: '',
-                        overview: '',
-                        recommendation: '',
-                        references: '',
-                        module_name: '',
-                        vulnerable_versions: '',
-                        patched_versions: ''
-                    }
+    test('should handle string via entries', () => {
+        const data = {
+            vulnerabilities: {
+                'test-package': {
+                    name: 'test-package',
+                    severity: 'high',
+                    via: ['other-package'],
+                    range: '<1.0.0'
                 }
-            };
+            }
+        };
 
-            const result = parser.parseAuditData(mockData);
-            assert.strictEqual(result.length, 1);
-            assert.deepStrictEqual(result[0], {
-                cves: [],
-                cwe: '',
-                title: '',
-                severity: 'unknown',
-                overview: '',
-                recommendation: '',
-                references: '',
-                module_name: '',
-                vulnerable_versions: '',
-                patched_versions: ''
-            });
-        });
+        const result = parseAuditData(data);
+        expect(result).toHaveLength(1);
+        expect(result[0].title).toBe('test-package');
+    });
 
-        it('should throw error for invalid data format', function () {
-            assert.throws(() => {
-                parser.parseAuditData(null);
-            }, /Invalid audit data format/);
+    test('should handle array via entries', () => {
+        const data = {
+            vulnerabilities: {
+                'test-package': {
+                    name: 'test-package',
+                    severity: 'high',
+                    via: ['other-package', {
+                        source: 123,
+                        title: 'Test Vulnerability'
+                    }],
+                    range: '<1.0.0'
+                }
+            }
+        };
 
-            assert.throws(() => {
-                parser.parseAuditData({});
-            }, /Missing or invalid advisories in audit data/);
+        const result = parseAuditData(data);
+        expect(result).toHaveLength(1);
+        expect(result[0].title).toBe('Test Vulnerability');
+    });
 
-            assert.throws(() => {
-                parser.parseAuditData({ advisories: null });
-            }, /Missing or invalid advisories in audit data/);
+    test('should handle missing fields gracefully', () => {
+        const data = {
+            vulnerabilities: {
+                'test-package': {
+                    name: 'test-package'
+                }
+            }
+        };
+
+        const result = parseAuditData(data);
+        expect(result).toHaveLength(1);
+        expect(result[0]).toEqual({
+            cves: [],
+            cwe: '',
+            title: 'test-package',
+            severity: 'unknown',
+            overview: '',
+            recommendation: 'No fix available',
+            references: '',
+            module_name: 'test-package',
+            vulnerable_versions: '',
+            patched_versions: ''
         });
     });
 });

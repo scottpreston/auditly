@@ -59,10 +59,10 @@ describe('runAuditly', function () {
             registryUrl: 'https://registry.npmjs.org/'
         };
 
-        // Simulate npm audit failure
+        // Simulate npm audit failure with invalid exit code
         mockSpawn.on.mockImplementation((event, callback) => {
             if (event === 'exit') {
-                callback(1);
+                callback(2); // Use exit code 2 to indicate a real failure
             }
         });
 
@@ -74,7 +74,7 @@ describe('runAuditly', function () {
 
         await assert.rejects(
             async () => await index.runAuditly(options),
-            /npm audit failed with exit code 1/
+            /npm audit failed with exit code 2/
         );
     });
 
